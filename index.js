@@ -50,6 +50,9 @@ exports.readCSVFromString = function (csvData, options, callback) {
 
       return row;
     })
+    .on("error", function(err){
+      callback(err, null);
+    })
     .on("end", function () {
       callback(null, rows);
     });
