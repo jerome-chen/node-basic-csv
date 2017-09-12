@@ -19,7 +19,8 @@ exports.readCSVFromString = function (csvData, options, callback) {
 
   options = _.defaults(options, {
     parseNumbers: true,
-    dropHeader: false
+    dropHeader: false,
+    rtrim: true
   });
 
   var rows = [],
@@ -76,7 +77,8 @@ exports.readCSV = function (filename, options, callback) {
   options = _.defaults(options, {
     encoding: "utf-8",
     parseNumbers: true,
-    dropHeader: false
+    dropHeader: false,
+    rtrim: true
   });
 
   fs.readFile(filename, options.encoding, function (err, csvData) {
